@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BookVerse - Mini Web App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>BookVerse</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section class="card">
+        <h2>Books</h2>
+        <div class="tools">
+          <input id="search" placeholder="Search by title or author...">
+          <select id="genreFilter">
+            <option value="all">All genres</option>
+          </select>
+          <select id="sortRating">
+            <option value="none">Sort by rating</option>
+            <option value="asc">Low → High</option>
+            <option value="desc">High → Low</option>
+          </select>
+          <button id="clearBtn">Clear All</button>
+        </div>
+        <div class="spinner" id="spinner"><div class="lds"></div></div>
+        <p id="emptyMsg" class="muted" style="display:none">No books found.</p>
+        <table id="booksTable">
+          <thead>
+            <tr><th>Title</th><th>Author</th><th>Genre</th><th>Rating</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Add / Edit Book</h3>
+          <form id="bookForm">
+            <input type="hidden" id="bookId">
+            <label>Title<input id="title" type="text" required></label>
+            <label>Author<input id="author" type="text" required></label>
+            <label>Genre
+              <select id="genre" required>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>Rating<input id="rating" type="number" min="1" max="5" value="3" required></label>
+            <div class="actions">
+              <button type="submit">Save</button>
+              <button type="button" id="cancelEdit">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+
+
+/* ======================
+   GLOBAL STYLES
+====================== */
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --muted: #6b7280;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: #111;
+}
+
+/* ======================
+   HEADER
+====================== */
+header {
+  background: linear-gradient(90deg, #eef2ff, #fff);
+  padding: 16px;
+  border-bottom: 1px solid #e6e6ee;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+/* ======================
+   LAYOUT
+====================== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================
+   CARD COMPONENT
+====================== */
+.card {
+  background-color: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================
+   FORM STYLES
+====================== */
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* ======================
+   BUTTONS
+====================== */
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #3f3bb0;
+}
+
+button#cancelEdit,
+button#clearBtn {
+  background-color: #e5e7eb;
+  color: #111;
+}
+
+button#cancelEdit:hover,
+button#clearBtn:hover {
+  background-color: #d4d4d8;
+}
+
+/* ======================
+   TOOLS (Search, Filter, Sort)
+====================== */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tools input,
+.tools select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* ======================
+   TABLE STYLES
+====================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+td button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+/* ======================
+   SPINNER (Loading)
+====================== */
+.spinner {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.spinner.show {
+  display: flex;
+}
+
+.lds {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ======================
+   TEXT UTILITIES
+====================== */
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
